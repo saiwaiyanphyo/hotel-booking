@@ -32,14 +32,14 @@
 
                 <table id="bankTable" class="table table-striped dt-table-hover" style="width:100%">
                     <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Identity Number</th>
-                        <th>Actions</th>
-                    </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Identity Number</th>
+                            <th>Actions</th>
+                        </tr>
                     </thead>
                     <tbody>
                     </tbody>
@@ -53,10 +53,10 @@
     <x-slot:footerFiles>
         <script src="{{ asset('plugins/global/vendors.min.js') }}"></script>
         <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
-        <script src="{{asset('plugins/table/datatable/button-ext/dataTables.buttons.min.js')}}"></script>
+        <script src="{{ asset('plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}"></script>
         <script>
-            $(document).ready(function () {
-                let baseUrl = '{{ url('/employee/guests') }}';
+            $(document).ready(function() {
+                let baseUrl = '{{ url(' / employee / guests ') }}';
 
 
                 $.ajaxSetup({
@@ -78,9 +78,9 @@
                         url: '{{ route('employee.ajax.guests') }}'
                     },
                     columns: [{
-                        data: 'no',
-                        name: 'no'
-                    },
+                            data: 'no',
+                            name: 'no'
+                        },
                         {
                             data: 'full_name',
                             name: 'full_name'
@@ -102,7 +102,7 @@
                             name: 'actions',
                             orderable: false,
                             searchable: false,
-                            render: function (data, type, full, meta) {
+                            render: function(data, type, full, meta) {
                                 return `
 
                             `;
