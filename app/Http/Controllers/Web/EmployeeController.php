@@ -95,6 +95,8 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+        $employee->delete();
+        return redirect()->route('admin.employees.index');
     }
     
     public function employees(Request $request)
