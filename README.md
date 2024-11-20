@@ -9,7 +9,7 @@
 
 2. **Change directory to the project folder**
     ```sh
-    cd hote-booking
+    cd hotel-booking
     ```
 
 3. **Install dependencies**
