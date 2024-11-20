@@ -62,7 +62,7 @@ class RoomController extends Controller
         $roomTypes = RoomType::all();
         $statuses = ['available', 'occupied', 'reserved', 'maintenance'];
         return view('dashboard.room.edit',
-        ['title' => 'Edit Room', 'room' => $room, 'roomTypes' => $roomTypes, 'statuses' => $statuses]);
+        ['title' => 'Edit Room', 'room' => $room, 'roomTypes' => $roomTypes, 'statuses' => $statuses,'roomTypeId'=>$room->room_type_id]);
     }
 
     /**

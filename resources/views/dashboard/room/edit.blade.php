@@ -31,7 +31,7 @@
                 <div class="row gx-5">
                     <div class="col-md-6">
                         <form class="row g-4" action="{{ route('admin.rooms.update', $room->id) }}"
-                              enctype="multipart/form-data" method="POST">
+                            enctype="multipart/form-data" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="col-md-12">
@@ -39,36 +39,38 @@
                             </div>
                             <div class="col-md-12 ">
                                 <x-text-input name="room_number" :value="old('room_number', $room->room_number)"
-                                              :error="$errors->has('room_number') ? $errors->first('room_number') : null"
-                                              label="Room Number" required="true"/>
+                                    :error="$errors->has('room_number') ? $errors->first('room_number') : null"
+                                    label="Room Number" required="true" />
                             </div>
 
                             <div class="col-md-12 ">
-                                <x-select-input name="room_type_id" label="Room Type"
-                                                :options="$roomTypes"
-                                                :selected="old('room_type_id', $room->room_type_id)"
-                                                :error="$errors->has('room_type_id') ? $errors->first('room_type_id') : null"
-                                                required="true"/>
+                                <x-select-input-edit name="room_type_id" label="Room Type" :options="$roomTypes"
+                                    :selected="old('room_type_id', $room->room_type_id)" :roomTypeId=$roomTypeId
+                                    :error="$errors->has('room_type_id') ? $errors->first('room_type_id') : null"
+                                    required="true" />
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <select id="status" class="form-select @error('status') is-invalid @enderror" name="status" required>
+                                    <select id="status" class="form-select @error('status') is-invalid @enderror"
+                                        name="status" required>
                                         @foreach($statuses as $status)
-                                            <option value="{{ $status }}" {{ old('status', $room->status) == $status ? 'selected' : '' }}>{{ ucfirst($status) }}</option>
+                                        <option value="{{ $status }}"
+                                            {{ old('status', $room->status) == $status ? 'selected' : '' }}>
+                                            {{ ucfirst($status) }}</option>
                                         @endforeach
                                     </select>
                                     <label for="status">Status <span class="text-danger">&nbsp;&lowast;</span></label>
                                 </div>
                                 @if ($errors->has('status'))
-                                    <span class="text-danger small fw-bolder" role="alert">{{ $errors->first('status') }}</span>
+                                <span class="text-danger small fw-bolder"
+                                    role="alert">{{ $errors->first('status') }}</span>
                                 @endif
                             </div>
 
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <a href="{{ route('admin.rooms.index') }}"
-                                   class="btn btn-danger">Cancel</a>
+                                <a href="{{ route('admin.rooms.index') }}" class="btn btn-danger">Cancel</a>
                             </div>
                         </form>
                     </div>
