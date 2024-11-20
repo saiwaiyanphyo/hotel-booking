@@ -4,7 +4,7 @@
 
 1. **Clone the repository**
     ```sh
-    git clone https://github.com/mgkyawzayya/hotel-booking.git
+    git clone https://github.com/saiwaiyanphyo/hotel-booking.git
     ```
 
 2. **Change directory to the project folder**
