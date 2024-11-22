@@ -22,6 +22,8 @@
     @vite(['resources/scss/plugins/perfect-scrollbar/perfect-scrollbar.scss'])
     @vite(['resources/scss/layouts/structure.scss'])
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     {{ $headerFiles }}
 </head>
 
@@ -74,6 +76,7 @@
 <script src="{{ asset('plugins/mousetrap/mousetrap.min.js') }}"></script>
 <script src="{{ asset('plugins/waves/waves.min.js') }}"></script>
 <script src="{{ asset('plugins/highlight/highlight.pack.js') }}"></script>
+
 @if ($scrollspy == 1)
     @vite(['resources/assets/js/scrollspyNav.js'])
 @endif

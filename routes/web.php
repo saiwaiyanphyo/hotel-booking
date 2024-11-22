@@ -36,6 +36,7 @@ Route::prefix('/admin')->group(function () {
             Route::post('room-types', [RoomTypeController::class, 'roomTypes'])->name('ajax.room-types');
             Route::post('employees', [EmployeeController::class, 'employees'])->name('ajax.employees');
             Route::post('rooms', [RoomController::class, 'rooms'])->name('ajax.rooms');
+            Route::post('monthly_income', [HomeController::class, 'monthly_income'])->name('ajax.monthly_income');
 
         });
 

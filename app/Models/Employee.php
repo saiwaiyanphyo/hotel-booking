@@ -12,4 +12,9 @@ class Employee extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

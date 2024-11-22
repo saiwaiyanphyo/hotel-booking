@@ -97,7 +97,7 @@ class RoomController extends Controller
         $params = [
             'limit' => $request->input('length', 10),
             'offset' => $request->input('start', 0),
-            'order_by' => ['created_at' => 'desc'],
+            'order_by' => ['created_at' => 'asc'],
             'search' => $request->input('search.value', '')
         ];
         
@@ -111,7 +111,7 @@ class RoomController extends Controller
                 });
         }
         
-        $rooms = $query->orderBy('created_at', 'desc')
+        $rooms = $query->orderBy('created_at', 'asc')
             ->offset($params['offset'])
             ->limit($params['limit'])
             ->get();

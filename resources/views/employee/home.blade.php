@@ -12,11 +12,43 @@
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <div class="row layout-top-spacing">
-
-        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing rounded-8">
-            {{--            <x-widgets._w-card-four title="Customers" total="100"/>--}}
+    <div class="container py-4">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-door-open text-primary fa-2x mr-3"></i>
+                    <div>
+                        <h5 class="card-title text-primary">Room Count</h5>
+                        <p class="card-text display-4 font-weight-bold">{{$room_count}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-percentage text-success fa-2x mr-3"></i>
+                    <div>
+                        <h5 class="card-title text-success">Room Percentage</h5>
+                        <p class="card-text display-4 font-weight-bold">{{$room_percentage}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-book text-info fa-2x mr-3"></i>
+                    <div>
+                        <h5 class="card-title text-info">Booking Count</h5>
+                        <p class="card-text display-4 font-weight-bold">{{$booking_count}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->

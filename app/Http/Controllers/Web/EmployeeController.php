@@ -101,11 +101,12 @@ class EmployeeController extends Controller
     
     public function employees(Request $request)
     {
+       
         $count = Employee::count();
         $params = [
             'limit' => $request->input('length', 10),
             'offset' => $request->input('start', 0),
-            'order_by' => ['created_at' => 'desc'],
+            'order_by' => ['created_at' => 'asc'],
             'search' => $request->input('search.value', '')
         ];
         
@@ -117,7 +118,7 @@ class EmployeeController extends Controller
                 ->orWhere('phone_number', 'like', '%'.$params['search'].'%');
         }
         
-        $employees = $query->orderBy('created_at', 'desc')
+        $employees = $query->orderBy('created_at', 'asc')
             ->offset($params['offset'])
             ->limit($params['limit'])
             ->get();
