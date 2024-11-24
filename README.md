@@ -40,6 +40,7 @@
 8. **Open the browser and visit the following URL**
     ```sh
     http://localhost:8000/admin/login
+    http://localhost:8000/employee/login
     ```
 
 9. **Login with the following credentials**
