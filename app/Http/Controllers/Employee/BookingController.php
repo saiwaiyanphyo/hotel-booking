@@ -58,7 +58,11 @@ class BookingController extends Controller
         ]);
         
         
-        list($check_in_date, $check_out_date) = explode(' to ', $data['check_in_date']);
+        $dates = explode(' to ', $data['check_in_date']);
+        if (count($dates) !== 2) {
+            return back()->withErrors(['check_in_date' => 'Invalid date range format.']);
+        }
+        list($check_in_date, $check_out_date) = $dates;
         $check_in_date = date('Y-m-d', strtotime($check_in_date));
         $check_out_date = date('Y-m-d', strtotime($check_out_date));
         $totalDate = (strtotime($check_out_date) - strtotime($check_in_date)) / (60 * 60 * 24);
